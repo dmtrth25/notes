@@ -34,7 +34,6 @@ export const renderData = () => {
         <button data-id="${note.id}" class="button action-button archive-button">Archive</button>
       </td>
     `
-
     const editButtons = row.querySelectorAll('.edit-button')
     editButtons.forEach(button => {
       button.removeEventListener('click', editHandler)

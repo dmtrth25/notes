@@ -1,15 +1,6 @@
 import { createNoteFromModal } from './notes.js'
-import {
-  archiveHandler,
-  removeHandler,
-  editHandler,
-  unArchiveHandler
-} from "./handlers.js"
-import {
-  renderData,
-  renderSummary,
-  renderArchivedNotes
-} from './utils.js'
+import { editHandler, unArchiveHandler } from "./handlers.js"
+import { renderData, renderSummary, renderArchivedNotes } from './utils.js'
 
 const showArchived = document.getElementById('show-archived-btn')
 const archivedTable = document.querySelector('.archived')
@@ -20,6 +11,10 @@ document.getElementById('add-note').addEventListener('click', () => {
 
 document.getElementById('close-button').addEventListener('click', () => {
   document.getElementById('add-note-modal').style.display = 'none'
+})
+
+document.getElementById('edit-close-button').addEventListener('click', () => {
+  document.getElementById('edit-note-modal').style.display = 'none'
 })
 
 document.getElementById('add-note-button').addEventListener('click', () => {
@@ -48,29 +43,28 @@ showArchived.addEventListener('click', () => {
 })
 
 export const setupEventListeners = () => {
-  const notesBody = document.getElementById('body');
+  const notesBody = document.getElementById('body')
   notesBody.addEventListener('click', (event) => {
-    const target = event.target;
+    const target = event.target
     if (target.classList.contains('edit-button')) {
-      editHandler(event);
+      editHandler(event)
     }
-  });
+  })
 
-  const archivedBody = document.getElementById('archived');
+  const archivedBody = document.getElementById('archived')
   archivedBody.addEventListener('click', (event) => {
-    const target = event.target;
+    const target = event.target
     if (target.classList.contains('unarchive-button')) {
-      unArchiveHandler(event);
+      unArchiveHandler(event)
     }
-  });
-};
+  })
+}
 
-
-const init = () => {
+const fns = () => {
   renderData()
   renderArchivedNotes()
   renderSummary()
   setupEventListeners()
 }
 
-init()
+fns()
