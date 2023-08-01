@@ -50,6 +50,46 @@
       <div class="container-header">
         <h2>Summary</h2>
         <button id="add-note" class="button">Add note</button>
+        <div class="modal" id="add-note-modal">
+          <div class="modal-content">
+            <div class="modal-content_header">
+              <span class="close-button" id="close-button">&times;</span>
+              <h2>Add New Note</h2>
+            </div>
+            <label for="note-title">Title:</label>
+            <input type="text" id="note-title" required>
+            <label for="note-content">Content:</label>
+            <textarea id="note-content" rows="4" required></textarea>
+            <label for="note-category">Category:</label>
+            <select id="note-category" required>
+              <option value="" disabled selected>Select category</option>
+              <option value="Task">Task</option>
+              <option value="Random Thought">Random Thought</option>
+              <option value="Idea">Idea</option>
+            </select>
+            <button class="button" id="add-note-button">Add Note</button>
+          </div>
+        </div>
+        <div class="modal" id="edit-note-modal">
+          <div class="modal-content">
+            <div class="modal-content_header">
+              <span class="close-button" id="edit-close-button">&times;</span>
+              <h2>Edit Note</h2>
+            </div>
+            <label for="edit-note-title">Title:</label>
+            <input type="text" id="edit-note-title" required>
+            <label for="edit-note-content">Content:</label>
+            <textarea id="edit-note-content" rows="4" required></textarea>
+            <label for="edit-note-category">Category:</label>
+            <select id="edit-note-category" required>
+              <option value="" disabled selected>Select category</option>
+              <option value="Task">Task</option>
+              <option value="Random Thought">Random Thought</option>
+              <option value="Idea">Idea</option>
+            </select>
+            <button class="button" id="update-note-button">Update Note</button>
+          </div>
+        </div>
       </div>
       <table>
         <thead>
@@ -63,6 +103,7 @@
       </table>
     </div>
   </div>
+  <script type="module" src="js/handlers.js"></script>
   <script type="module" src="js/script.js"></script>
 </body>
 
