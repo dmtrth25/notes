@@ -27,7 +27,7 @@ export const renderData = () => {
       <td>${note.name}</td>
       <td>${note.content}</td>
       <td>${note.category}</td>
-      <td>${datesColumn.innerHTML}</td>
+      <td>${note.dates}</td>
       <td class="actions">
         <button data-id="${note.id}" class="button action-button edit-button">Edit</button>
         <button data-id="${note.id}" class="button action-button delete-button">Remove</button>
@@ -71,7 +71,7 @@ export const renderArchivedNotes = () => {
       <td>${note.name}</td>
       <td>${note.content}</td>
       <td>${note.category}</td>
-      <td>${datesColumn.innerHTML}</td>
+      <td>${note.dates}</td>
       <td class="actions">
         <button data-id="${note.id}" class="button action-button unarchive-button">Unarchive</button>
       </td>
@@ -93,10 +93,16 @@ export const renderSummary = () => {
 
   const categories = ['Task', 'Random Thought', 'Idea']
 
-  categories.forEach((category) => {
+  const summaryData = categories.reduce((acc, category) => {
     const activeNotesCount = data.filter((note) => note.category === category && !note.archived).length
     const archivedNotesCount = archivedArr.filter((note) => note.category === category).length
 
+    acc.push({ category, activeNotesCount, archivedNotesCount })
+    return acc
+  }, [])
+
+  summaryData.forEach((summaryItem) => {
+    const { category, activeNotesCount, archivedNotesCount } = summaryItem
     const row = document.createElement('tr')
     row.innerHTML = `
       <td>${category}</td>
@@ -107,3 +113,4 @@ export const renderSummary = () => {
     summaryBody.appendChild(row)
   })
 }
+

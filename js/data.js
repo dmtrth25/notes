@@ -2,7 +2,7 @@ export const data = [
   {
     id: 1,
     name: 'English',
-    time: '2023-08-03 13:53',
+    time: '03/08/2023',
     content: 'Practice on exercises',
     category: 'Random Thought',
     dates: ''
@@ -10,7 +10,7 @@ export const data = [
   {
     id: 2,
     name: 'Movies',
-    time: '2023-08-01 13:22',
+    time: '01/08/2023',
     content: 'Watch Shrek',
     category: 'Task',
     dates: ''
@@ -18,7 +18,7 @@ export const data = [
   {
     id: 3,
     name: 'Create new app',
-    time: '2023-07-31 19:14',
+    time: '31/07/2023',
     content: 'Begin implement new app',
     category: 'Idea',
     dates: ''
@@ -26,15 +26,15 @@ export const data = [
   {
     id: 4,
     name: 'Education',
-    time: '2023-07-31 11:26',
+    time: '31/07/2023',
     content: 'Learn React Native',
     category: 'Random Thought',
-    dates: '01-09-2023 12:20'
+    dates: '01/09/2023'
   },
   {
     id: 5,
     name: 'To do',
-    time: '2023-07-31 11:12',
+    time: '02/08/2023',
     content: 'Resolve the task',
     category: 'Task',
     dates: ''
@@ -42,15 +42,15 @@ export const data = [
   {
     id: 6,
     name: 'Learn a new technology',
-    time: '2023-08-04 11:34',
+    time: '04/08/2023',
     content: 'Learn Angular',
     category: 'Idea',
-    dates: ''
+    dates: '01/06/2024'
   },
   {
     id: 7,
     name: 'Walk with pet',
-    time: '2023-08-02 17:19',
+    time: '02/08/2023',
     content: 'Walk with my dog',
     category: 'Task',
     dates: ''
@@ -58,7 +58,7 @@ export const data = [
   {
     id: 8,
     name: 'Walk with cat',
-    time: '2023-08-03 11:53',
+    time: '03/08/2023',
     content: 'Walk with my cat',
     category: 'Task',
     dates: ''
