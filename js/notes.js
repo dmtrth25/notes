@@ -10,14 +10,26 @@ export const archivedArr = []
 export const createNoteFromModal = (name, content, category) => {
   try {
     if (name && content && category) {
-      const dates = extractData(content)
+      const currentDate = new Date()
+      const formattedDate = currentDate.toLocaleDateString("en-US", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })
+
+      const parts = formattedDate.split('/')
+      const day = parts[1]
+      const month = parts[0]
+      const year = parts[2]
+
       const newNote = {
         id: data.length + 1,
         name,
-        time: new Date().toLocaleString(),
+        time: `${day}/${month}/${year}`,
         content,
         category,
-        dates,
+        dates: "",
+        archived: false,
       }
 
       data.push(newNote)
